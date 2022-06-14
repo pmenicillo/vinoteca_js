@@ -1,0 +1,66 @@
+/*Nav*/
+.navbar{
+  background-color: #a64d79;
+}
+
+.navbar div a {
+  color: #ffd966;
+}
+
+/*Main*/
+body{
+    background-color: #4c1130;
+}
+
+.catalog {
+    padding: 3%;
+}
+
+.titleCatalog{
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.btn {
+    background-color: #a64d79;
+}
+
+.btn :hover{
+    color: #a64d79;
+}
+
+.shop {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a64d79;
+    color: #ffd966;
+    height: 55px; }
+    footer div a {
+      color: #ffd966;
+      text-decoration: none; }
+    footer div a:hover {
+      color: white;
+      text-decoration: none; }
+    footer .footerText {
+      display: flex;
+      margin-right: 60px; }
+    footer .icons {
+      display: flex;
+      width: 40%;
+      margin-left: 60px; }
+      footer .icons a {
+        display: flex;
+        justify-content: space-around;
+        padding-right: 1rem; 
+    }
