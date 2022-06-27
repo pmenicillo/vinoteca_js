@@ -30,10 +30,30 @@ body{
     color: #a64d79;
 }
 
+#btnIngresos a{
+  text-decoration: none;
+}
+
 .shop {
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
+}
+
+.nuevosIngresos{
+  color: white;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+#lista-productos{
+  color: white;
+}
+
+.newProducts{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }
 
 
@@ -63,4 +83,6 @@ footer {
         display: flex;
         justify-content: space-around;
         padding-right: 1rem; 
-    }
+}
+
+

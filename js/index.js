@@ -51,7 +51,7 @@ const productos = [
     },
 ]
 
-//Estructura del contenedor
+//Estructura del contenedor que genera las tarjetas
 const getList = () => {     
     contenedor.innerHTML= ``
     for (const item of productos){
@@ -75,37 +75,3 @@ const getList = () => {
     };
 };
 getList();
-
-//Guardar en carrito
-function carritoLocalStorage(){
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-} 
-
-//MercadoPago
-const pagar = async () => {
-    const productosToMap = productos.map(Element => {
-        let nuevoElemento = 
-        {
-            title: Element.nombre,
-            description: Element.tipo,
-            picture_url: Element.imagen,
-            category_id: Element.id,
-            quantity: Element.stock,
-            currency_id: "ARS",
-            unit_price: Element.precio
-        }
-        return nuevoElemento
-    })
-    let response = await fetch("https://api.mercadopago.com/checkout/preferences", {
-        method: "POST", 
-        headers: {
-            Authorization: "Bearer TEST-4407970019793603-060122-00baec16ada36bde5a420efec843837a-119453291"
-        },
-        body: JSON.stringify({
-            items: productosToMap
-        })
-    })
-    let data = await response.json()
-    console.log(data);
-    window.open(data.init_point, "_blank")
-}

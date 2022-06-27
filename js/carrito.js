@@ -1,7 +1,7 @@
 const tablaCarrito = document.getElementById("tablaCarrito");
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let carrito = [];
 
-//Utilizo elementos de la libreria Sweet Alert para dar alertas al realizar acciones. Tanto al agregar productos como al vaciar el carrito
+//Agrego elemento seleccionado al carrito, se recibe una alerta de libreria Sweet Alert
 const agregarCarrito = (id) => {  
     const seleccion = productos.find(item => item.id === id);
     const busqueda = carrito.findIndex(el => el.id === id); 
@@ -26,6 +26,11 @@ const agregarCarrito = (id) => {
     }
     console.log(carrito);
 }
+
+//Guardar en carrito
+function carritoLocalStorage(){
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+} 
 
 const getCarrito = (item) => {    
     let acum = "";
@@ -54,11 +59,21 @@ const vaciarCarrito = () => {
     Swal.fire('Vaciaste el carrito')
 }
 
+const comprar = () => {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Compra realizada ',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
 let btnCarrito = document.getElementById('btnVerCarrito');
 btnCarrito.addEventListener("click", () => getCarrito(carrito));
 
 let btnVaciar = document.getElementById('btnVaciar');
 btnVaciar.addEventListener("click", () => vaciarCarrito());
 
-let btnPago = document.getElementById('btnPago');
-btnPago.addEventListener("click", () => pagar());
+let btnComprar = document.getElementById('btnComprar');
+btnComprar.addEventListener("click", () =>comprar());
